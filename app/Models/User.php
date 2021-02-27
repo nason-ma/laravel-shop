@@ -34,6 +34,8 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\UserAddress[] $addresses
+ * @property-read int|null $addresses_count
  */
 class User extends Authenticatable
 {
@@ -70,4 +72,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'email_verified' => 'boolean',
     ];
+
+    public function addresses()
+    {
+        return $this->hasMany(UserAddress::class);
+    }
 }

@@ -25,6 +25,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/email_verification/send', 'EmailVerificationController@send')->name('email_verification.send');
 
     Route::middleware('email_verified')->group(function () {
-        
+        Route::get('user_addresses', 'UserAddressesController@index')->name('user_addresses.index');
     });
 });
