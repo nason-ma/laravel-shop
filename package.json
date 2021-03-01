@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "china-area-data": "^5.0.1",
-        "cross-env": "^7.0.3"
+        "cross-env": "^7.0.3",
+        "sweetalert": "^2.1.2"
     }
 }

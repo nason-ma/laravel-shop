@@ -30,6 +30,16 @@ class UserAddress extends Model
         'last_used_at',
     ];
 
+    public $saveField = [
+        'province',
+        'city',
+        'district',
+        'address',
+        'zip',
+        'contact_name',
+        'contact_phone',
+    ];
+
     protected $dates = ['last_used_at'];
 
     public function user()
