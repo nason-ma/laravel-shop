@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * App\Models\UserAddress
@@ -15,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|UserAddress query()
  * @mixin \Eloquent
  */
-class UserAddress extends Model
+class UserAddress extends BaseModel
 {
     use HasFactory;
 

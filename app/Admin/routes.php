@@ -1,5 +1,6 @@
 <?php
 
+use App\Admin\Controllers\UsersController;
 use Illuminate\Routing\Router;
 
 Admin::routes();
@@ -13,4 +14,5 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
 
+    $router->get('users', 'UsersController@index')->name('users.index');
 });
