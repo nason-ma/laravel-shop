@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.3|^8.0",
         "barryvdh/laravel-ide-helper": "^2.9",
+        "codingyu/ueditor": "^3.0",
         "doctrine/dbal": "~2.12",
         "encore/laravel-admin": "1.8.*",
         "fideloper/proxy": "^4.4",

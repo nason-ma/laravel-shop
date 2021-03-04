@@ -6,6 +6,7 @@ use App\Models\Product;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
+use Encore\Admin\Form\NestedForm;
 use Encore\Admin\Grid;
 use Encore\Admin\Grid\Displayers\Actions;
 use Encore\Admin\Grid\Tools;
@@ -67,6 +68,57 @@ class ProductsController extends AdminController
         return $grid;
     }
 
+    public function create(Content $content)
+    {
+        return Admin::content(function (Content $content) {
+            $content->header('创建商品');
+            $content->body($this->form());
+        });
+    }
+
+    public function edit($id, Content $content)
+    {
+        return Admin::content(function (Content $content) use ($id) {
+            $content->header('编辑商品');
+            $content->body($this->form()->edit($id));
+        });
+    }
+
+    /**
+     * Make a form builder.
+     *
+     * @return Form
+     */
+    protected function form()
+    {
+        // 创建一个菜单
+        $form = new Form(new Product());
+
+        // 创建一个输入框，第一个参数 title 是模型的字段名，第二个参数是该字段描述
+        $form->text('title', __('商品名称'))->rules('required');
+        // 创建一个选择图片的框
+        $form->image('image', __('封面图片'))->rules('required|image');
+        // 创建一个富文本编辑器， 富文本编辑组件在v1.7.0版本之后移除
+        $form->ueditor('description', __('商品描述'))->rules('required');
+        // 创建一组单选框
+        $form->radio('on_sale', __('上架'))->options(['1' => '是', '0' => '否'])->default('0');
+
+        // 直接添加一对多的关联模型
+        $form->hasMany('skus', 'SKU 列表', function (NestedForm $form) {
+            $form->text('title', 'SKU 名称')->rules('required');
+            $form->text('description', 'SKU 描述')->rules('required');
+            $form->text('price', '单价')->rules('required|numeric|min:0.01');
+            $form->text('stock', '剩余库存')->rules('required|integer|min:0');
+        });
+
+        // 定义事件回调，当模型即将保存时会触发这个回调
+        $form->saving(function (Form $form) {
+            $form->model()->price = collect($form->input('skus'))->where(Form::REMOVE_FLAG_NAME, 0)->min('price') ?: 0;
+        });
+
+        return $form;
+    }
+
     /**
      * Make a show builder.
      *
@@ -92,24 +144,4 @@ class ProductsController extends AdminController
         return $show;
     }
 
-    /**
-     * Make a form builder.
-     *
-     * @return Form
-     */
-    protected function form()
-    {
-        $form = new Form(new Product());
-
-        $form->text('title', __('Title'));
-        $form->textarea('description', __('Description'));
-        $form->image('image', __('Image'));
-        $form->switch('on_sale', __('On sale'))->default(1);
-        $form->decimal('rating', __('Rating'))->default(5.00);
-        $form->number('sold_count', __('Sold count'));
-        $form->number('review_count', __('Review count'));
-        $form->decimal('price', __('Price'));
-
-        return $form;
-    }
 }
