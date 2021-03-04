@@ -13,6 +13,30 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|UserAddress newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|UserAddress query()
  * @mixin \Eloquent
+ * @property int $id
+ * @property int $user_id
+ * @property string $province
+ * @property string $city
+ * @property string $district
+ * @property string $address
+ * @property int $zip
+ * @property string $contact_name
+ * @property string $contact_phone
+ * @property \Illuminate\Support\Carbon|null $last_used_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAddress whereAddress($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAddress whereCity($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAddress whereContactName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAddress whereContactPhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAddress whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAddress whereDistrict($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAddress whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAddress whereLastUsedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAddress whereProvince($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAddress whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAddress whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAddress whereZip($value)
  */
 class UserAddress extends BaseModel
 {
