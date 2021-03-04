@@ -40,9 +40,9 @@ class ProductsController extends AdminController
         $grid = new Grid(new Product());
 
         $grid->column('id', __('Id'))->sortable();
+        $grid->column('image', __('封面图'))->image('', 40, 40);
         $grid->column('title', __('商品名称'));
         // $grid->column('description', __('详情'));
-        // $grid->column('image', __('主图'));
         $grid->column('on_sale', __('已上架'))->display(function ($value) {
             return $value ? '是' : '否';
         });
