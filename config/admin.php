@@ -411,6 +411,12 @@ return [
                 'initialFrameHeight' => 400, // 例如初始化高度
             ],
             'field_type' => 'ueditor'
+        ],
+
+        'grid-lightbox' => [
+
+            // Set to `false` if you want to disable this extension
+            'enable' => true,
         ]
     ],
 ];
