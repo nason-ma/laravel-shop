@@ -6,6 +6,9 @@
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_addresses/create_and_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_addresses/create_and_edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_addresses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_addresses/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +217,7 @@
       <workItem from="1613638903684" duration="995000" />
       <workItem from="1613640059316" duration="1752000" />
       <workItem from="1614255829329" duration="42104000" />
-      <workItem from="1614682196669" duration="20082000" />
+      <workItem from="1614682196669" duration="24814000" />
     </task>
     <servers />
   </component>
@@ -226,10 +229,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1614682548791" />
-    <state x="776" y="448" key="NewPhpFileDialog" timestamp="1614864249495">
+    <state x="776" y="448" key="NewPhpFileDialog" timestamp="1614911772713">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="776" y="448" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1614864249495" />
+    <state x="776" y="448" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1614911772713" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1614390877060">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
