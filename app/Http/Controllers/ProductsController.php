@@ -43,9 +43,9 @@ class ProductsController extends Controller
 
         return view('products.index', [
             'products' => $products,
-            'filters'  => [
+            'filters' => [
                 'search' => $search,
-                'order'  => $order,
+                'order' => $order,
             ],
         ]);
     }
@@ -85,5 +85,12 @@ class ProductsController extends Controller
         $user->favoriteProducts()->detach($product);
 
         return [];
+    }
+
+    public function favorites(Request $request)
+    {
+        $products = $request->user()->favoriteProducts()->paginate(16);
+
+        return view('products.favorites', ['products' => $products]);
     }
 }
