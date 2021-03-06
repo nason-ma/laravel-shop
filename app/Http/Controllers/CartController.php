@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AddCartRequest;
 use App\Models\CartItem;
+use App\Models\ProductSku;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -29,5 +30,21 @@ class CartController extends Controller
         }
 
         return [];
+    }
+
+    public function remove(ProductSku $sku, Request $request)
+    {
+        $request->user()->cartItems()->where('product_sku_id', $sku->id)->delete();
+
+        return [];
+    }
+
+    public function index(Request $request)
+    {
+        // with(['productSku.product']) 方法用来预加载购物车里的商品和 SKU 信息。解决N + 1 查询问题
+        // 同时 Laravel 还支持通过 . 的方式加载多层级的关联关系，这里我们就通过 . 提前加载了与商品 SKU 关联的商品。
+        $cartItems = $request->user()->cartItems()->with(['productSku.product'])->get();
+
+        return view('cart.index', compact('cartItems'));
     }
 }
