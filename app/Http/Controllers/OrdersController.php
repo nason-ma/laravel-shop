@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exceptions\InvalidRequestException;
 use App\Http\Requests\OrderRequest;
+use App\Jobs\CloseOrder;
 use App\Models\Order;
 use App\Models\ProductSku;
 use App\Models\UserAddress;
@@ -66,6 +67,9 @@ class OrdersController extends Controller
 
             return $order;
         });
+        // 派发取消订单任务
+        $this->dispatch(new CloseOrder($order, config('app.order_ttl')));
+
         return $order;
     }
 }

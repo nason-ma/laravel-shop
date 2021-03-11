@@ -19,7 +19,8 @@
         "laravel-admin-ext/grid-lightbox": "^1.0",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "overtrue/laravel-lang": "^4.2"
+        "overtrue/laravel-lang": "^4.2",
+        "predis/predis": "^1.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
