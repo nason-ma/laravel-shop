@@ -37,6 +37,10 @@ use Illuminate\Notifications\Notifiable;
  * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\UserAddress[] $addresses
  * @property-read int|null $addresses_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\CartItem[] $cartItems
+ * @property-read int|null $cart_items_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $favoriteProducts
+ * @property-read int|null $favorite_products_count
  */
 class User extends Authenticatable
 {
