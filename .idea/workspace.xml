@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d1701b92-e581-4b4e-81e8-a5a4eb1c332b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +163,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
@@ -173,6 +176,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="power.mode.ii" />
     <property name="ts.external.directory.path" value="E:\Program Files\DevelopmentTool\PhpStorm\PhpStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -205,7 +209,10 @@
       <workItem from="1615371469190" duration="11000" />
       <workItem from="1615372230947" duration="1867000" />
       <workItem from="1615441646417" duration="20000" />
-      <workItem from="1615446858050" duration="11112000" />
+      <workItem from="1615446858050" duration="12461000" />
+      <workItem from="1615516799963" duration="316000" />
+      <workItem from="1615517131575" duration="598000" />
+      <workItem from="1615521581236" duration="4984000" />
     </task>
     <servers />
   </component>
@@ -217,10 +224,18 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1614682548791" />
+    <state x="728" y="245" key="NewPhpClassDialog" timestamp="1615529001669">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="728" y="245" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1615529001669" />
     <state x="776" y="448" key="NewPhpFileDialog" timestamp="1615454816815">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="776" y="448" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1615454816815" />
+    <state x="461" y="169" key="SettingsEditor" timestamp="1615517540959">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1615517540959" />
     <state x="814" y="423" key="WebDeployment.AddServerDialog.v.1" timestamp="1615371476717">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
