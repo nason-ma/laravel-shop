@@ -39,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton('wechat_pay', function () {
             $config = config('pay.wechat');
+            $config['notify_url'] = route('payment.wechat.notify');
             // 判断当前项目运行环境是否为线上环境
             if (app()->environment() !== 'production') {
                 $config['log']['level'] = Logger::DEBUG;
@@ -46,7 +47,7 @@ class AppServiceProvider extends ServiceProvider
                 $config['log']['level'] = Logger::WARNING;
             }
 
-            // 调用 Yansongda\Pay 来创建一个支付宝支付对象
+            // 调用 Yansongda\Pay 来创建一个微信支付对象
             return Pay::wechat($config);
         });
     }

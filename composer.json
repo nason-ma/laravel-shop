@@ -13,6 +13,7 @@
         "codingyu/ueditor": "^3.0",
         "doctrine/dbal": "~2.12",
         "encore/laravel-admin": "1.8.*",
+        "endroid/qr-code": "^4.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",

@@ -28,23 +28,36 @@
                                     </div>
                                     <div>
                                         <span class="product-title">
-                                           <a target="_blank" href="{{ route('products.show', [$item->product_id]) }}">{{ $item->product->title }}</a>
+                                           <a target="_blank"
+                                              href="{{ route('products.show', [$item->product_id]) }}">{{ $item->product->title }}</a>
                                         </span>
                                         <span class="sku-title">{{ $item->productSku->title }}</span>
                                     </div>
                                 </td>
                                 <td class="sku-price text-center vertical-middle">￥{{ $item->price }}</td>
                                 <td class="sku-amount text-center vertical-middle">{{ $item->amount }}</td>
-                                <td class="item-amount text-right vertical-middle">￥{{ number_format($item->price * $item->amount, 2, '.', '') }}</td>
+                                <td class="item-amount text-right vertical-middle">
+                                    ￥{{ number_format($item->price * $item->amount, 2, '.', '') }}</td>
                             </tr>
                         @endforeach
-                        <tr><td colspan="4"></td></tr>
+                        <tr>
+                            <td colspan="4"></td>
+                        </tr>
                     </table>
                     <div class="order-bottom">
                         <div class="order-info">
-                            <div class="line"><div class="line-label">收货地址：</div><div class="line-value">{{ join(' ', $order->address) }}</div></div>
-                            <div class="line"><div class="line-label">订单备注：</div><div class="line-value">{{ $order->remark ?: '-' }}</div></div>
-                            <div class="line"><div class="line-label">订单编号：</div><div class="line-value">{{ $order->no }}</div></div>
+                            <div class="line">
+                                <div class="line-label">收货地址：</div>
+                                <div class="line-value">{{ join(' ', $order->address) }}</div>
+                            </div>
+                            <div class="line">
+                                <div class="line-label">订单备注：</div>
+                                <div class="line-value">{{ $order->remark ?: '-' }}</div>
+                            </div>
+                            <div class="line">
+                                <div class="line-label">订单编号：</div>
+                                <div class="line-value">{{ $order->no }}</div>
+                            </div>
                         </div>
                         <div class="order-summary text-right">
                             <div class="total-amount">
@@ -69,7 +82,8 @@
                                 <!-- 支付按钮开始 -->
                                 @if(!$order->paid_at && !$order->closed)
                                     <div class="payment-buttons">
-                                        <a class="btn btn-primary btn-sm" href="{{ route('payment.alipay', ['order' => $order->id]) }}">支付宝支付</a>
+                                        <a class="btn btn-primary btn-sm"
+                                           href="{{ route('payment.alipay', ['order' => $order->id]) }}">支付宝支付</a>
                                         {{--<button class="btn btn-sm btn-success" id='btn-wechat'>微信支付</button>--}}
                                     </div>
                                 @endif
@@ -80,4 +94,26 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scriptsAfterJs')
+    <script>
+        $(document).ready(function () {
+            // 微信支付按钮事件
+            $('#btn-wechat').click(function () {
+                swal({
+                    // content 参数可以是一个 DOM 元素，这里我们用 jQuery 动态生成一个 img 标签，并通过 [0] 的方式获取到 DOM 元素
+                    content: $('<img src="{{ route('payment.wechat', ['order' => $order->id]) }}" />')[0],
+                    // buttons 参数可以设置按钮显示的文案
+                    buttons: ['关闭', '已完成付款'],
+                })
+                    .then(function (result) {
+                        // 如果用户点击了 已完成付款 按钮，则重新加载页面
+                        if (result) {
+                            location.reload();
+                        }
+                    })
+            });
+        });
+    </script>
 @endsection
