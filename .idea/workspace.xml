@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Controllers/OrdersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/orders/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/orders/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +219,7 @@
       <workItem from="1615516799963" duration="316000" />
       <workItem from="1615517131575" duration="598000" />
       <workItem from="1615521581236" duration="5536000" />
-      <workItem from="1615792104943" duration="18822000" />
+      <workItem from="1615792104943" duration="20423000" />
     </task>
     <servers />
   </component>
@@ -226,10 +227,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615946828222">
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615961739665">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1615946828222" />
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1615961739665" />
     <state x="728" y="245" key="NewPhpClassDialog" timestamp="1615529001669">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
