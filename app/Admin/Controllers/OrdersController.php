@@ -4,7 +4,6 @@ namespace App\Admin\Controllers;
 
 use App\Models\Order;
 use Encore\Admin\Controllers\AdminController;
-use Encore\Admin\Facades\Admin;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
@@ -21,10 +20,16 @@ class OrdersController extends AdminController
 
     public function index(Content $content)
     {
-        return Admin::content(function (Content $content) {
-            $content->header('订单列表');
-            $content->body($this->grid());
-        });
+        return $content->header('查看订单')
+            ->body($this->grid());
+    }
+
+    public function show($id, Content $content)
+    {
+        $order = Order::findOrFail($id);
+        // body 方法可以接受 Laravel 的视图作为参数
+        return $content->header('查看订单')
+            ->body(view('admin.orders.show', ['order' => $order]));
     }
 
     /**
