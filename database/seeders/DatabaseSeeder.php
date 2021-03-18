@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         Model::unguard();
 
-        \App\Models\UserAddress::factory()->count(3)->create();
+        // \App\Models\UserAddress::factory()->count(3)->create();
+        \App\Models\CouponCode::factory()->count(10)->create();
 
         Model::reguard();
     }

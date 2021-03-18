@@ -51,6 +51,9 @@ use Ramsey\Uuid\Uuid;
  * @method static \Illuminate\Database\Eloquent\Builder|Order whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Order whereUserId($value)
  * @mixin \Eloquent
+ * @property int|null $coupon_code_id
+ * @property-read \App\Models\CouponCode|null $couponCode
+ * @method static \Illuminate\Database\Eloquent\Builder|Order whereCouponCodeId($value)
  */
 class Order extends BaseModel
 {
@@ -163,5 +166,10 @@ class Order extends BaseModel
         } while (self::where('refund_no', $no)->exists());
 
         return $no;
+    }
+
+    public function couponCode()
+    {
+        return $this->belongsTo(CouponCode::class);
     }
 }
