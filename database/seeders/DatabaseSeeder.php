@@ -17,8 +17,11 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         Model::unguard();
 
-        // \App\Models\UserAddress::factory()->count(3)->create();
-        \App\Models\CouponCode::factory()->count(10)->create();
+        $this->call(UsersSeeder::class);
+        $this->call(UserAddressesSeeder::class);
+        $this->call(ProductsSeeder::class);
+        $this->call(CouponCodesSeeder::class);
+        $this->call(OrdersSeeder::class);
 
         Model::reguard();
     }

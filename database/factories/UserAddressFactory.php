@@ -27,6 +27,8 @@ class UserAddressFactory extends Factory
             ["江苏省", "南京市", "浦口区"],
             ["江苏省", "苏州市", "相城区"],
             ["广东省", "深圳市", "福田区"],
+            ["广东省", "深圳市", "龙岗区"],
+            ["广东省", "深圳市", "宝安区"],
         ];
 
         $address = $this->faker->randomElement($addresses);
